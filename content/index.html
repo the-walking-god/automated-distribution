@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <title>Homes.com App Distribution</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/sjcl.js"></script>
+    <script src="apps.js"></script>
+  </head>
+
+
+<body>
+  <div id="header">
+    <img src="images/logo-nav.gif" alt="Homes.com" class="logo"/>
+  </div>
+
+    <div id="content">
+      <h2>Homes.com App Distribution</h2>
+    <div ng-controller="AppsCtrl">
+      <form ng-submit="doDecr()">
+        <input type="text" ng-model="pwdText" size="30" placeholder="Password">
+        <input class="btn-primary" type="submit" value="go">
+      </form>
+      <ul class="list">
+            <li ng-repeat="app in apps">
+              <span class="project">{{app.name}}</span>
+              <ul>
+                  <li ng-repeat="os in app.Versions">
+                    <span class="os">{{os.name}}</span>
+                  <ul>
+                      <li ng-repeat="link in os.links">
+                        <span class="app"><a href="{{link.link}}">{{link.version}}</a></span>
+                      </li>
+                    </ul>
+                </li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+    </div>
+
+
+</body>
+</html>

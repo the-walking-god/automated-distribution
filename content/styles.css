@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/* App distro styles son! */
+@viewport{
+    zoom: 1.0;
+    width: device-width;
+}
+
+
+p{
+	font:400 14px/20px "Open Sans";
+	margin:0 0 20px;
+	color:#484848;
+	max-width:450px;
+}
+h1{
+	font:300 36px/20px "Open Sans";
+	margin:0 0 20px;
+	color:#F7841B;
+}
+h2{
+	font:400 24px/20px "Open Sans";
+	margin:0 0 20px;
+	color:#0054a0;
+}
+
+a{
+	color:#0045a0;
+	text-decoration:none;
+}
+
+.list{
+	
+	padding:0 20px;
+	margin:0 0 20px;
+	line-height:20px;
+}
+.list ul{
+margin:0 0 10px;
+padding:0 10px;
+}
+.list li{
+	list-style:none;
+	line-height:20px;
+	padding:0;
+	margin:0;
+}
+.project{
+font-weight:700;
+font-size:18px;
+}
+
+.os{
+font-weight:700;
+font-size:14px;
+}
+
+.app{
+font-weight:400;
+font-size:14px;
+}
+
+#content{
+	margin:100px auto;
+	padding:20px;
+	border-radius:5px;
+	width:75%;
+	/* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(255, 255, 255);
+	/* RGBa with 0.6 opacity */
+	background: rgba(255, 255, 255, 0.9);
+	/* For IE 5.5 - 7*/
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ffffff, endColorstr=#99ffffff);
+	/* For IE 8*/
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99fffff, endColorstr=#99ffffff)";
+}
+
+/*-------header-----*/
+
+.logo{
+float:left;
+margin:0 0 0 20px;
+display:block;
+}
+
+#header{
+position: fixed;
+top:0;
+left:0;
+width:100%;
+height:50px;
+border-bottom:1px solid #aaa;
+background:#fff;
+display:block;
+z-index:999;
+}
+
+
+@media screen and (max-width: 640px){
+body{
+	margin:0;
+	padding:0;
+	font:400 14px/20px "Open Sans";
+	color:#484848;
+	background:url(images/bg-tall.jpg) no-repeat;
+	background-size: cover;
+}
+}
+@media screen and (min-width: 640px){
+body{
+	margin:0;
+	padding:0;
+	font:400 14px/20px "Open Sans";
+	color:#484848;
+	background:url(images/bg.jpg) no-repeat;
+	background-size:cover;
+}
+}

@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Responsive Image Slider</title>
+
+	<link rel="stylesheet" href="slider.css" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script src="https://designmodo.com/demo/responsiveslider/js/jquery.flexslider-min.js"></script>
+
+	<!-- Preview Styles -->
+	<style>html,body{height:100%}body{background:#f2f2f2;-webkit-box-shadow:inset 0 0 0 5px #f2f2f2,inset 0 0 0 10px #90c0aa,inset 0 0 0 15px #f2f2f2;-mox-box-shadow:inset 0 0 0 5px #f2f2f2,inset 0 0 0 10px #90c0aa,inset 0 0 0 15px #f2f2f2;box-shadow:inset 0 0 0 5px #f2f2f2,inset 0 0 0 10px #90c0aa,inset 0 0 0 15px #f2f2f2;margin:0}.flex-container{position: relative;margin: 0 auto; top: 0; padding: 5px; }</style>
+<meta name="robots" content="noindex,follow" />
+</head>
+<body>
+<div class="flex-container">
+	<div class="flexslider">
+		<ul class="slides">
+			<li>
+				<img src="orig/4.jpg" />
+				<p>100</p>
+			</li>
+			<li>
+				<img src="orig_webp_80/4_80.webp" />
+				<p>80</p>
+			</li>
+			<li>
+				<img src="orig_webp_70/4_70.webp" />
+				<p>70</p>
+			</li>
+			<li>
+				<img src="orig_webp_60/4_60.webp" />
+				<p>60</p>
+			</li>
+
+		</ul>
+	</div>
+
+</div>
+
+<script>
+$(document).ready(function () {
+	$('.flexslider').flexslider({
+		animation: 'fade',
+		animationSpeed: 1,
+		controlsContainer: '.flexslider'
+	});
+});
+</script>
+</body>
+</html>

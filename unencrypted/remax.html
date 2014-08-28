@@ -1,0 +1,8 @@
+<script src="../content/js/sjcl.js"></script>
+<!-- Note: `apps` object is moved to apps.js file. Please, updated
+  your app entries in the app.js file -->
+<script type="text/javascript" src="./remax.js"></script>
+<script type="text/javascript">
+      var data = sjcl.encrypt("Yahtzee", JSON.stringify(apps));
+      document.write('<textarea rows=20 cols=100>'+data+'</textarea>');
+</script>

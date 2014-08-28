@@ -1,0 +1,65 @@
+#!/usr/bin/env node
+
+/**
+ * First argument of this script should be the hostname for the CDN
+ */
+
+var stdin = process.openStdin(),
+  _ = require('lodash'),
+  path = require('path'),
+  cdnHost = process.argv[2] || false,
+  akamai = require('akamai');
+
+var data = "";
+
+if (!cdnHost) {
+  console.log('Invalid CDN Host');
+  process.exit(1);
+}
+
+stdin.on('data', function(chunk) {
+  data += chunk;
+});
+
+stdin.on('end', function() {
+
+  data = data.split('\n');
+
+  data = _.map(data, function (inpath) {
+    if (inpath == '.' || inpath == '..' || inpath == '') {
+      return false;
+    } 
+
+    return path.resolve(process.cwd(), inpath);
+  });
+
+  data = _.compact(data);
+
+  data = _.map(data, function (inpath) {
+    if (path.extname(inpath).indexOf('git') != -1 || path.basename(inpath).indexOf('.git') == 0) {
+      return false;
+    }
+
+    return inpath.replace(process.cwd(), cdnHost);
+  });
+
+  data = _.compact(data);
+
+  data.push(cdnHost + '/');
+
+  console.log('Clearing : ', data);
+
+  new akamai.purge(data, {
+    user: 'webdev@homes.com',
+    password: 'T4yB4x',
+    domain: 'production',
+    notify: ['julian@homes.com', 'jesse@homes.com']
+  }, function (err, responses) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+
+    console.log(require('util').inspect(responses, true, 2, true));
+  })
+});
