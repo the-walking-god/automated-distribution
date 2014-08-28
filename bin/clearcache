@@ -50,10 +50,10 @@ stdin.on('end', function() {
   console.log('Clearing : ', data);
 
   new akamai.purge(data, {
-    user: 'chris.chenery@gmail.com',
-    password: 'C@3s@r1122',
+    user: 'webdev@homes.com',
+    password: 'T4yB4x',
     domain: 'production',
-    notify: ['chris.chenery@gmail.com']
+    notify: ['chris.chenery@homes.com']
   }, function (err, responses) {
     if (err) {
       console.log(err);
